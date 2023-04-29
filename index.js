@@ -29,3 +29,11 @@ list[2].style.background = 'green';
 for(let i=0; i<list.length; i++){
     list[i].style.fontWeight = 'bold';
 }
+
+// GETELEMENTSBYTAGNAME //
+var ele = document.getElementsByClassName('temp');
+ele[0].style.background = 'red';
+// console.log(ele);.
+var ele = document.getElementsByTagName('li');
+ele[4].style.color = 'white';
+// console.log(ele);
