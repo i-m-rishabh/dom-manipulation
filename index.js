@@ -37,3 +37,15 @@ ele[0].style.background = 'red';
 var ele = document.getElementsByTagName('li');
 ele[4].style.color = 'white';
 // console.log(ele);
+
+// QUERRYSELECTOR //
+var items = document.querySelectorAll('li');
+items[1].style.background = 'green';
+// console.log(items);
+items[2].style.display = 'none';
+
+for(let i=0; i<items.length; i++){
+    if(i%2===0){
+        items[i].style.background = 'green';
+    }
+}
