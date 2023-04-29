@@ -20,3 +20,12 @@ var header = document.getElementById('header');
 header.style.border = '2px solid black';
 var subtitle = document.getElementById('subtitle');
 subtitle.style.fontWeight = 'bold';
+
+// GETELEMENTBYCLASSNAME //
+var list = document.getElementsByClassName('list-group-item');
+// console.log(list);.
+list[2].style.background = 'green';
+
+for(let i=0; i<list.length; i++){
+    list[i].style.fontWeight = 'bold';
+}
