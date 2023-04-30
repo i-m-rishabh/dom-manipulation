@@ -55,7 +55,7 @@
 
 // TRAVERSING THE DOM //
 
-var itemsList = document.querySelector('#items');
+// var itemsList = document.querySelector('#items');
 // parentNode
 // console.log(itemsList.parentNode);
 // itemsList.parentNode.style.background = '#f4f4f4';
@@ -85,15 +85,32 @@ var itemsList = document.querySelector('#items');
 // console.log(document.querySelector('#items').lastElementChild.previousElementSibling);
 
 // createElement
-var newDiv = document.createElement('div');
+// var newDiv = document.createElement('div');
 // console.log(newDiv);
 
 //createTextNode 
-var newTextNode = document.createTextNode('hello world!');
+// var newTextNode = document.createTextNode('hello world!');
 // console.log(newTextNode);
-newDiv.appendChild(newTextNode);
+// newDiv.appendChild(newTextNode);
 // console.log(newDiv);
 
 // insertBefore
+// var headerTitle = document.querySelector('#header-title');
+// document.querySelector('#header-div').insertBefore(newDiv,headerTitle);
+
+// TASK 7 //
+// 1.
+var newHeading = document.createElement('h1');
+var newText = document.createTextNode('Hello World');
+newHeading.appendChild(newText);
+newHeading.style.color = 'white';
+
 var headerTitle = document.querySelector('#header-title');
-document.querySelector('#header-div').insertBefore(newDiv,headerTitle);
+document.querySelector('#header-div').insertBefore(newHeading,headerTitle);
+
+// 2.
+var newP = document.createElement('p');
+var text = document.createTextNode('hello world');
+newP.appendChild(text);
+var items = document.querySelector('#items');
+items.insertBefore(newP,items.firstElementChild);
