@@ -15,18 +15,26 @@
         <form action="" class="form ">
             <label for="item" class="form-label text"><h1 id="subtitle">Add Items</h1></label>
             <div class="input-group">
-                <input type="text" class="form-control" name="item" id="">
+                <input type="text" class="form-control" name="item" id="newElement">
             <button type="submit" class="ms-1 btn btn-dark ">submit</button>
             </div>
         </form>
         <div class="container mt-2">
             <h1>Items</h1>
             <ul class="list-group list" id="items">
-                <li class="list-group-item">item 1 </li>
-                <li class="list-group-item">item 2 </li>
-                <li class="list-group-item">item 3 </li>
-                <li class="list-group-item">item 4 </li>
-                <li class="list-group-item temp">item 5</li>
+                <li class="list-group-item">item 1 
+                    <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
+                </li>
+                <li class="list-group-item">item 2 
+                    <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
+                </li>
+                <li class="list-group-item">item 3 
+                    <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
+                </li>
+                <li class="list-group-item">item 4 
+                    <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
+                </li>
+                <!-- <li class="list-group-item temp">item 5</li> -->
             </ul>
         </div>
     </div>

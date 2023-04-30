@@ -100,17 +100,53 @@
 
 // TASK 7 //
 // 1.
-var newHeading = document.createElement('h1');
-var newText = document.createTextNode('Hello World');
-newHeading.appendChild(newText);
-newHeading.style.color = 'white';
+// var newHeading = document.createElement('h1');
+// var newText = document.createTextNode('Hello World');
+// newHeading.appendChild(newText);
+// newHeading.style.color = 'white';
 
-var headerTitle = document.querySelector('#header-title');
-document.querySelector('#header-div').insertBefore(newHeading,headerTitle);
+// var headerTitle = document.querySelector('#header-title');
+// document.querySelector('#header-div').insertBefore(newHeading,headerTitle);
 
-// 2.
-var newP = document.createElement('p');
-var text = document.createTextNode('hello world');
-newP.appendChild(text);
-var items = document.querySelector('#items');
-items.insertBefore(newP,items.firstElementChild);
+// // 2.
+// var newP = document.createElement('p');
+// var text = document.createTextNode('hello world');
+// newP.appendChild(text);
+// var items = document.querySelector('#items');
+// items.insertBefore(newP,items.firstElementChild);
+
+// remove element
+var itemsList = document.getElementById('items');
+// console.log(itemsList);
+itemsList.addEventListener('click',remove);
+
+function remove(e){
+    if(e.target.classList.contains('delete')){
+       itemsList.removeChild(e.target.parentElement); 
+    }
+}
+
+// add element
+var form = document.querySelector('.form');
+form.addEventListener('submit', addElement);
+
+function addElement(e){
+    e.preventDefault();
+    var element = document.getElementById('newElement').value;
+    // creating new li
+    var li = document.createElement('li');
+    // adding class name
+    li.className = 'list-group-item';
+    // creting text content of li
+    var content = document.createTextNode(element);
+    li.appendChild(content);
+    // creating delete button
+    var deleteBtn = document.createElement('button');
+    deleteBtn.className = 'btn btn-danger btn-sm float-end delete';
+    var content = document.createTextNode('X');
+    deleteBtn.appendChild(content);
+    li.appendChild(deleteBtn);
+    // adding new li to list
+    itemsList.appendChild(li);
+    document.getElementById('newElement').value = '';
+}
