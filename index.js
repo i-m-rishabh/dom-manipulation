@@ -184,7 +184,7 @@ function filterElement(e){
     let text = e.target.value.toLocaleLowerCase();
     let items = document.querySelector('#items').children;
     for(let i=0; i<items.length; i++){
-        if(items[i].firstElementChild.textContent.toLocaleLowerCase().indexOf(text)==0){
+        if(items[i].children[0].textContent.toLocaleLowerCase().indexOf(text)!=-1 || items[i].children[1].textContent.toLocaleLowerCase().indexOf(text)!=-1){
             items[i].style.display = 'block';
         }else{
             items[i].style.display = 'none';
