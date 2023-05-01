@@ -21,14 +21,17 @@
         <form action="" class="form">
             <label for="item" class="form-label text"><h1 id="subtitle">Add Items</h1></label>
             <div class="input-group">
-                <input type="text" class="form-control" name="item" id="newElement">
+                <input type="text" class="form-control mx-2" name="item" id="newElement" placeholder="item">
+                <input type="text" class="form-control mx-2" name="item-des" id="newElement-des" placeholder="item description">
             <button type="submit" class="ms-1 btn btn-dark ">submit</button>
             </div>
         </form>
         <div class="container mt-2">
             <h1>Items</h1>
             <ul class="list-group list" id="items">
-                <li class="list-group-item"><span class="item">item1</span> 
+                <li class="list-group-item">
+                    <span class="item fw-bold">item1</span>
+                    <span class="item-des">item-description</span> 
                     <input type="button" value="X" class="btn btn-sm btn-danger float-end delete ">
                     <input type="button" value="edit" class="btn btn-sm btn-primary float-end edit mx-1">
                     

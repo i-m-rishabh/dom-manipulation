@@ -133,16 +133,23 @@ form.addEventListener('submit', addElement);
 function addElement(e){
     e.preventDefault();
     var element = document.getElementById('newElement').value;
+    var elementDes = document.getElementById('newElement-des').value;
     // creating new li
     var li = document.createElement('li');
     // adding class name
     li.className = 'list-group-item';
     // creting text content of li
     var textSpan = document.createElement('span');
-    textSpan.className = 'item';
+    textSpan.className = 'item me-1 fw-bold';
     var content = document.createTextNode(element);
     textSpan.appendChild(content);
     li.appendChild(textSpan);
+        // creting text-description content of li
+        var textSpan = document.createElement('span');
+        textSpan.className = 'item-des me-1';
+        var content = document.createTextNode(elementDes);
+        textSpan.appendChild(content);
+        li.appendChild(textSpan);
     // creating delete button
     var deleteBtn = document.createElement('button');
     deleteBtn.className = 'btn btn-danger btn-sm float-end delete';
@@ -158,6 +165,8 @@ function addElement(e){
     // adding new li to list
     itemsList.appendChild(li);
     document.getElementById('newElement').value = '';
+    document.getElementById('newElement-des').value = '';
+
 }
 
 // search element //
