@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container-fluid bg-success p-3" id="header-div" >
-        <h1 class="header" id="header-title" style="color:white">Item Lister</h1>
+    <div class="container-fluid bg-success p-3 row" id="header-div" >
+        <h1 class="header d-inline col" id="header-title" style="color:white">Item Lister</h1>
+        <form action="" class="float-end col-4" id="search-form">
+            <div class="input-group">
+                <input class="form-control" type="search" name="" id="search-input" placeholder="search items">
+                <!-- <button class="btn btn-dark btn-sm " type="submit" id ="search-button">search</button> -->
+            </div>
+        </form>
     </div>
     <div class="container border p-2 mt-2 mx-auto">
-        <form action="" class="form ">
+        <form action="" class="form">
             <label for="item" class="form-label text"><h1 id="subtitle">Add Items</h1></label>
             <div class="input-group">
                 <input type="text" class="form-control" name="item" id="newElement">
@@ -22,12 +28,12 @@
         <div class="container mt-2">
             <h1>Items</h1>
             <ul class="list-group list" id="items">
-                <li class="list-group-item">item 1 
+                <li class="list-group-item"><span class="item">item1</span> 
                     <input type="button" value="X" class="btn btn-sm btn-danger float-end delete ">
                     <input type="button" value="edit" class="btn btn-sm btn-primary float-end edit mx-1">
                     
                 </li>
-                <li class="list-group-item">item 2 
+                <!-- <li class="list-group-item">item 2 
                     <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
                     <input type="button" value="edit" class="btn btn-sm btn-primary float-end edit mx-1">
                 </li>
@@ -38,7 +44,7 @@
                 <li class="list-group-item">item 4 
                     <input type="button" value="X" class="btn btn-sm btn-danger float-end delete">
                     <input type="button" value="edit" class="btn btn-sm btn-primary float-end edit mx-1">
-                </li>
+                </li> -->
                 <!-- <li class="list-group-item temp">item 5</li> -->
             </ul>
         </div>

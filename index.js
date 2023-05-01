@@ -138,15 +138,47 @@ function addElement(e){
     // adding class name
     li.className = 'list-group-item';
     // creting text content of li
+    var textSpan = document.createElement('span');
+    textSpan.className = 'item';
     var content = document.createTextNode(element);
-    li.appendChild(content);
+    textSpan.appendChild(content);
+    li.appendChild(textSpan);
     // creating delete button
     var deleteBtn = document.createElement('button');
     deleteBtn.className = 'btn btn-danger btn-sm float-end delete';
     var content = document.createTextNode('X');
     deleteBtn.appendChild(content);
     li.appendChild(deleteBtn);
+    // creating edit button
+    var editBtn = document.createElement('button');
+    editBtn.className = 'btn btn-sm btn-primary float-end edit mx-1';
+    var content = document.createTextNode('edit');
+    editBtn.appendChild(content);
+    li.appendChild(editBtn);
     // adding new li to list
     itemsList.appendChild(li);
     document.getElementById('newElement').value = '';
+}
+
+// search element //
+
+// document.getElementById('search-form').addEventListener('submit', searchElement);
+
+// function searchElement(e){
+//     e.preventDefault();
+//     console.log('hello');
+// }
+
+document.getElementById('search-input').addEventListener('keyup',filterElement);
+
+function filterElement(e){
+    let text = e.target.value.toLocaleLowerCase();
+    let items = document.querySelector('#items').children;
+    for(let i=0; i<items.length; i++){
+        if(items[i].firstElementChild.textContent.toLocaleLowerCase().indexOf(text)==0){
+            items[i].style.display = 'block';
+        }else{
+            items[i].style.display = 'none';
+        }
+    }
 }
